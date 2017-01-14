@@ -1,0 +1,22 @@
+db:
+  image: mysql
+  ports:
+    - "3306:3306"
+  environment:
+    MYSQL_ROOT_PASSWORD: root
+httpd:
+  image: customhttpd:basic
+  volumes:
+    - ./:/var/www/html
+  ports:
+    - "80:80"
+  links:
+    - db:mysql 
+wpcli:
+  image: tatemz/wp-cli
+  volumes_from:
+    - httpd
+  links:
+    - db:mysql
+  entrypoint: wp  
+  command: "--info"
