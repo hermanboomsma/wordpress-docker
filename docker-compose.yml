@@ -17,6 +17,7 @@ services:
     image: apachephp:7.1
     volumes:
       - ./:/var/www/html
+      - ./_log/apache:/var/log/apache2
     ports:
       - "80:80"
     links:
