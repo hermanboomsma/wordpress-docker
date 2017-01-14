@@ -1,24 +1,26 @@
 # Docker WordPress setup
 
-This setup contains Apache, PHP 7.1, MariaDB and WP-CLI.
+This setup contains Apache, PHP5.6 or PHP 7.1, MariaDB and WP-CLI.
 
 ## First time setup
 
-If you're using this for the first time on your computer, create an image using the Dockerfile.
+If you're using this for the first time on your computer, create an image for Apache and PHP using one of the Dockerfiles found in the Dockerfiles directory.
 
-Use the docker build command to create the image.
+If you want to use php7.1, browse to Dockerfiles/apachephp7.1 and use the docker build command to create the image.
 
-`docker build -t customhttpd:basic .`
+`docker build -t apachephp:7.1 .`
 
 Notes: 
 
-* Change the Dockerfile to your needs if you need special PHP modules, Apache settings, etc. Change the tag 'basic' into something that reflects your changes.
+* Change the Dockerfile to your needs if you need special PHP modules, Apache settings, etc. Change the tag '7.1' into something that reflects your changes, like '7.1-FPM' if you set it to use FPM.
 
-* If you used a different name and/or tag, change that in docker-compose.yml.
+* You are free to choose the name and tag that are set with the -t paramter. Set the same name/tag in docker-compose.yml.
 
 ## Running the dev environment
 
 If you've already built the container you only need the docker-compose.yml file in your project.
+
+Set the PHP version you want to use. Change `image: apachephp:7.1` in `image: apachephp:5.6` if you want to use PHP 5.6. No need to change anything if you want to use PHP 7.1.
 
 To start the development environment run:
 
