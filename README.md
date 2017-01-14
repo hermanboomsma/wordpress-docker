@@ -36,20 +36,20 @@ If you want to reset your development setup, run:
 
 Use these settings to connect WordPress to the database:
 
-`
+```
 DATABASE: wordpress
 USER: wordpress
 PASSWORD: wordpress
 HOST: wp
-`
+```
 
 If you want to administer the DB using a GUI on the host computer, use these settings:
 
-`
+```
 USER: root
 PASSWORD: root
 HOST: localhost
-`
+```
 
 ## Requirements
 Docker 1.10.0 +
