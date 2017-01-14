@@ -1,6 +1,6 @@
 # Docker WordPress setup
 
-This setup contains Apache, PHP 7.1, MySQL and WP-CLI.
+This setup contains Apache, PHP 7.1, MariaDB and WP-CLI.
 
 ## First time setup
 
@@ -31,3 +31,25 @@ Running WP-CLI commands:
 If you want to reset your development setup, run:
 
 `docker-compose down`
+
+## Connecting to the database
+
+Use these settings to connect WordPress to the database:
+
+`
+DATABASE: wordpress
+USER: wordpress
+PASSWORD: wordpress
+HOST: wp
+`
+
+If you want to administer the DB using a GUI on the host computer, use these settings:
+
+`
+USER: root
+PASSWORD: root
+HOST: localhost
+`
+
+## Requirements
+Docker 1.10.0 +
