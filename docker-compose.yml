@@ -17,7 +17,7 @@ services:
     image: apachephp:7.1
     volumes:
       - ./:/var/www/html
-      - ./_log/apache:/var/log/apache2
+      - ./_log:/var/log/apache2
     ports:
       - "80:80"
     links:
@@ -30,7 +30,22 @@ services:
       - db:mysql
     entrypoint: wp  
     command: "--info"
+  phpma:
+    image: phpmyadmin/phpmyadmin
+    volumes:
+      - sessions:/sessions
+    ports:
+      - "81:80"
+    links:
+      - db:mysql
+    environment:
+      PMA_ARBITRARY: 1
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: wordpress
+      MYSQL_ROOT_PASSWORD: root       
 
 volumes:
   db_data:
     driver: local
+  sessions:
+    driver: local    

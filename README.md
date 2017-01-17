@@ -61,18 +61,7 @@ HOST: localhost
 
 ## Tips
 
-### PHP error log
-
-If you don't want to see errors during development, you can set PHP to write the errors to an error log. 
-
-Set this in your wp-config.php file:
-
-```
-ini_set( "log_errors", 1 );
-ini_set( "error_log", "/var/log/apache2/php-error.log" );
-ini_set( "display_errors", 0 );
-```
-The PHP error log file will show up in ./_log/apache/php-error.log
+* Apache and PHP logs are stored in ./_log
 
 ## Requirements
 Docker 1.10.0 +
