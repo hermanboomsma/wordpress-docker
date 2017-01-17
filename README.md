@@ -1,6 +1,6 @@
-# Docker WordPress setup
+# WordPress Docker setup
 
-This setup contains Apache, PHP 5.6 or PHP 7.1, MariaDB and WP-CLI.
+This setup contains Apache, PHP 5.6 or PHP 7.1, MariaDB, WP-CLI and PHPMyAdmin.
 
 ## First time setup
 
@@ -48,7 +48,15 @@ Use these settings to connect WordPress to the database:
 DATABASE: wordpress
 USER: wordpress
 PASSWORD: wordpress
-HOST: wp
+HOST: db
+```
+
+PHPMyAdmin runs on port 81. Use these credentials:
+
+```
+USER: root
+PASSWORD: root
+HOST: db
 ```
 
 If you want to administer the DB using a GUI on the host computer, use these settings:
@@ -64,4 +72,4 @@ HOST: localhost
 * Apache and PHP logs are stored in ./_log
 
 ## Requirements
-Docker 1.10.0 +
+Docker 1.10.0+
