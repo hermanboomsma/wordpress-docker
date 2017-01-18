@@ -18,7 +18,7 @@ The PHP 5.6 version has the MySQL driver as well as the MySQLi driver for backwa
 
 Notes: 
 
-* Change the Dockerfile to your needs if you need special PHP modules, Apache settings, etc. Change the tag '7.1' into something that reflects your changes, like '7.1-FPM' if you set it to use FPM.
+* Change the Dockerfile to your needs if you need special PHP modules, Apache settings, etc. Change the tag '7.1' into something that reflects your changes, like '7.1-256M' if you change the PHP memory limit to 256Mb.
 
 * You are free to choose the name and tag that are set with the -t paramter. Set the same name/tag in docker-compose.yml.
 
