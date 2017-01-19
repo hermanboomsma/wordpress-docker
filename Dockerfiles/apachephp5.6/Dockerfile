@@ -7,6 +7,7 @@ RUN set -ex; \
   apt-get install -y \
     libjpeg-dev \
     libpng12-dev \
+    php5-xdebug \
   ; \
   rm -rf /var/lib/apt/lists/*; \
   \
@@ -18,6 +19,8 @@ COPY ./php_custom.ini /usr/local/etc/php/conf.d/php_custom.ini
 
 # see https://secure.php.net/manual/en/opcache.installation.php
 COPY ./opcache.ini /usr/local/etc/php/conf.d/opcache.ini
+
+COPY ./xdebug.ini /usr/local/etc/php/conf.d/xdebug.ini
 
 RUN a2enmod rewrite expires
 

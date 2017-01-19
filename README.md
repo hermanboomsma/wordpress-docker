@@ -14,7 +14,7 @@ Change 7.1 into 5.6 if you want to use PHP 5.6.
 
 `docker build -t apachephp:5.6 Dockerfiles/apachephp5.6`
 
-The PHP 5.6 version has the MySQL driver as well as the MySQLi driver for backwards compatibility. This should work for older projects.
+The PHP 5.6 version has the MySQL driver as well as the MySQLi driver for backwards compatibility. This should work for older projects. The 5.6 version also contains XDebug for profiling.
 
 Notes: 
 
@@ -68,8 +68,13 @@ HOST: localhost
 ```
 
 ## Tips
-
 * Apache and PHP logs are stored in ./_log
+* Trigger XDebug with this GET query: ?XDEBUG_PROFILE
+* Use webgrind to read the profile dumps: git clone https://github.com/jokkedk/webgrind.git
+
+## TODO
+* mailhog image
+* workspace container with Composer, Gulp/Webpack
 
 ## Requirements
 Docker 1.10.0+
